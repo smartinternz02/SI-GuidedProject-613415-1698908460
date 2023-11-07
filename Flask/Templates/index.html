@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart Home Temperature</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+                background-color: #56d1ac;
+        }
+          .home {
+              text-align: center;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              margin-top: -100px;
+              height: 500px;
+          }
+        
+          /* Style for the text */
+          .text-two {
+              font-size: 40px;
+          }
+        
+          /* Style for the navbar */
+          .navbar {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              background-color: #151414;
+              color: white;
+              padding: 20px;
+          }
+        
+          /* Style for the navigation links */
+          .navbar a {
+              text-decoration: none;
+              color: white;
+              padding: 10px;
+              font-size: 25px;
+          }
+        
+          /* Style for the "Smart Home Temperature" text */
+          .navbar-heading {
+              font-size: 30px;
+          }
+          .about p{
+            font-size: 20px;
+            margin-left: 40px;
+            margin-right: 40px;
+            
+          }
+          .about{
+            height: 1000px;;
+          }
+          .about h1{
+            font-size: 30px;
+            margin-left: 40px;
+            margin-right: 40px;
+            
+          }
+          .contact-content {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h2 {
+            font-size: 24px;
+        }
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        .contact-form {
+            margin-top: 20px;
+        }
+        .form-input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .form-input:focus {
+            outline: none;
+            border: 1px solid #4CAF50;
+        }
+        .form-textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .form-textarea:focus {
+            outline: none;
+            border: 1px solid #4CAF50;
+        }
+        .submit-button {
+            background-color: #f01c1c;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .submit-button:hover {
+            background-color: #45a049;
+        }
+        .predict {
+            text-align: center;
+        }
+
+        .predict_content {
+            display: inline-block;
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            border: 2px solid #ff3300a8; 
+            width: 800px;
+        }
+        h2 {
+        font-size: 24px;
+        color: #f01c1c;
+        }
+        .environment-conditions {
+        font-size: 24px;
+        margin-top: 20px;
+        }
+        .condition-input {
+        margin-top: 10px;
+        width: 350px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        }
+        .predict-button {
+        background-color: #f01c1c;
+        color: white;
+        padding: 10px 20px;
+        font-size: 16px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-top: 20px;
+        }
+        .predict-button:hover {
+        background-color: #45a049;
+        }
+        .predict{
+        height: 2000px;
+        
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="navbar-heading">
+            Smart Home Temperature
+        </div>
+        <div>
+            <a href="#about">About</a>
+            <a href="#predict">Predict</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </div>
+
+    <!-- Rest of your content -->
+    <section class="home" id="home">
+        <div class="home-content">
+            <div class="text-two">Welcome to Smart Home Temperature</div>
+        </div>
+    </section>
+    <section class="about" id="about">
+      <div class="about-content">
+        <h1>About</h1>
+        <p>
+          Welcome to Smart Home Temperature, your one-stop solution for managing and optimizing the temperature in your home.<br> Our mission is to make your home more comfortable, energy-efficient, and convenient.
+      </p>
+      <p>
+          With the latest smart home technology and innovative solutions, <br>we provide you with the tools and knowledge to control and monitor your home's temperature from anywhere in the world.<br> Whether it's adjusting the thermostat, setting schedules, or receiving temperature alerts, we've got you covered.
+      </p>
+      <p>
+          Our team is dedicated to helping you create a comfortable living environment while saving on energy costs.<br> Explore our services and discover the benefits of a smart home temperature system.
+      </p>
+        <p>
+          We transform your home into an energy-efficient and comfortable oasis.<br>Our cutting-edge technology and smart solutions enable you to take control of your home's temperature and climate, ensuring a better quality of life.
+        </p>
+        <p>
+            At Smart Home Temperature, we're committed to providing you with the tools and knowledge needed to manage your home's environment effectively.<br> With our smart thermostats, sensors, and intuitive applications, you can customize heating and cooling, create energy-saving schedules, <br>and receive temperature alerts in real-time.
+        </p>
+        <p>
+            We believe in sustainable living and a greener future. <br>By using our services, you not only enhance your home's comfort but also contribute to reducing energy consumption and your carbon footprint.<br> It's a win-win for you and the planet.
+        </p>
+        <p>
+            Join us in the journey toward a smarter, more comfortable, and eco-friendly home. <br>Experience the benefits of smart home temperature management today!
+        </p>
+      </div>
+  </section>
+
+  
+  
+<section class="predict" id="predict">
+    <div class="predict_content">
+    <form  action="{{url_for('predict')}}" method="post"  id="predict-form" >
+    <div class="environment-conditions">
+        <h2>Predict Environmental Conditions</h2>
+        CO2_(dinning-room):<br> <input type="text" class="condition-input" name="CO2_(dinning-room)" placeholder="Enter CO2_(dinning-room)level" required="required" /><br><br>
+        CO2_room<br><input type="text" class="condition-input" name="CO2_room" placeholder="Enter CO2_room level" required="required" /><br><br>
+		Relative Humidity (dinning-room)<br><input type="text" class="condition-input" name="Relative_humidity_(dinning-room)" placeholder="Enter Relative Humidity (dinning-room)" required="required" /><br><br>
+        Relative Humidity Room<br><input type="text" class="condition-input" name="Relative_humidity_room" placeholder="Enter Relative Humidity Room " required="required" /><br><br>
+        Lighting_(dinning-room)<br><input type="text" class="condition-input" name="Lighting_(dinning-room)" placeholder="Enter Lighting_(dinning-room)" required="required" /><br><br>
+        Lighting_room<br><input type="text" class="condition-input" name="Lighting_room" placeholder="Enter Lighting_room " required="required" /><br><br>
+        Rain<br><input type="text" class="condition-input" name="Meteo_Rain" placeholder="Enter Rain" required="required" /><br><br>
+        Sun_dusk<br><input type="text" class="condition-input" name="Meteo_Sun_dusk" placeholder="Enter Sun_dusk" required="required" /><br><br>
+        Wind<br><input type="text" class="condition-input" name="Meteo_Wind" placeholder="Enter Wind" required="required" /><br><br>
+        Sun_light_in_west<br><input type="text" class="condition-input" name="Meteo_Sun_light_in_west_facade" placeholder="Enter sunlight in west" required="required" /><br><br>
+        Sun_light_in_south<br><input type="text" class="condition-input" name="Meteo_Sun_light_in_south_facade" placeholder="Enter sunlight in south" required="required" /><br><br>
+        Sun_light_in_east<br><input type="text" class="condition-input" name="Meteo_Sun_light_in_east_facade" placeholder="Enter sunlight in east" required="required" /><br><br>
+        Sun_irradiance<br><input type="text" class="condition-input" name="Meteo_Sun_irradiance" placeholder="Enter sun irradiance" required="required" /><br><br>
+        Outdoor_relative_humidity_Sensor<br><input type="text" class="condition-input" name="Outdoor_relative_humidity_Sensor" placeholder="Enter outdoor relative humidity" required="required" /><br><br>
+        Day_of_the_week<br><input type="text" class="condition-input" name="Day_of_the_week" placeholder="Enter Day of the week" required="required" /><br><br>
+        Timestamp<br><input type="text" class="condition-input" name="Timestamp" placeholder="Enter Timestamp" required="required" /><br><br>
+
+        <button class="predict-button" type="submit">Submit</button>
+
+
+        <br>
+<br>
+{{ prediction_text }}
+    </div>
+</form>
+</div>
+</section>
+
+<section class="contact" id="contact">
+    <div class="contact-content">
+        <h2>Contact Smart Home Temperature</h2>
+        <p>
+            Have questions or need assistance with our smart home temperature solutions? Feel free to get in touch with us. We're here to help!
+        </p>
+        <div class="contact-form">
+            <form>
+                <input class="form-input" type="text" placeholder="Your Name">
+                <input class="form-input" type="email" placeholder="Your Email">
+                <textarea class="form-textarea" placeholder="Your Message"></textarea>
+                <button class="submit-button" type="submit">Send Message</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+    
+
+
+</body>
+</html>
